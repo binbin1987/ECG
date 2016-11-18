@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E57FB79-64FE-4037-B903-43B6F903F1A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECG.Parser</RootNamespace>
+    <AssemblyName>ECG.Parser</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MFER.cs" />
+    <Compile Include="MWF\BaseData.cs" />
+    <Compile Include="MWF\ITLV.cs" />
+    <Compile Include="MWF\MFERdef.cs" />
+    <Compile Include="MWF\MWF_ATT_3F.cs" />
+    <Compile Include="MWF\MWF_BLE_01.cs" />
+    <Compile Include="MWF\MWF_BLK_04.cs" />
+    <Compile Include="MWF\MWF_CHN_05.cs" />
+    <Compile Include="MWF\MWF_CMP_0E.cs" />
+    <Compile Include="MWF\MWF_DTP_0A.cs" />
+    <Compile Include="MWF\MWF_FLT_11.cs" />
+    <Compile Include="MWF\MWF_INF_15.cs" />
+    <Compile Include="MWF\MWF_IPD_OF.cs" />
+    <Compile Include="MWF\MWF_IVL_0B.cs" />
+    <Compile Include="MWF\MWF_LDN_09.cs" />
+    <Compile Include="MWF\MWF_MAN_17.cs" />
+    <Compile Include="MWF\MWF_NORMAL_FF.cs" />
+    <Compile Include="MWF\MWF_NTE_16.cs" />
+    <Compile Include="MWF\MWF_NUL_12.cs" />
+    <Compile Include="MWF\MWF_OFF_0D.cs" />
+    <Compile Include="MWF\MWF_PNT_07.cs" />
+    <Compile Include="MWF\MWF_SEN_0C.cs" />
+    <Compile Include="MWF\MWF_SEQ_06.cs" />
+    <Compile Include="MWF\MWF_TXC_03.cs" />
+    <Compile Include="MWF\MWF_VER_02.cs" />
+    <Compile Include="MWF\MWF_WAV_1E.cs" />
+    <Compile Include="MWF\MWF_WFM_08.cs" />
+    <Compile Include="MWF\MWF_ZRO_00.cs" />
+    <Compile Include="MWF\ResolveResultCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Definition\ECG.Definition.csproj">
+      <Project>{7fdbdeec-a16c-44e1-b0ae-7cd0da6f2172}</Project>
+      <Name>ECG.Definition</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
